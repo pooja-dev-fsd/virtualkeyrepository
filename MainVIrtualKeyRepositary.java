@@ -3,10 +3,11 @@ import java.util.Scanner;
 
 
 public class MainVIrtualKeyRepositary {
-	
 		
 	public static void main(String[] args)
 	{
+		//Fetching user's home dir to create myFiles Dir in a generic way across
+		//Windows, Mac, Linux
 		String currDir = System.getProperty("user.home");
 
 		ListDir l=new ListDir();
@@ -32,6 +33,7 @@ public class MainVIrtualKeyRepositary {
 			System.out.println("\n\t---------------------------------\n");
 			System.out.println("Enter the choice:\n");
 			int choice = 0;
+			//Handling junk/invalid inputs from the user
 			try {
 				choice = Integer.parseInt(s.next());
 			}
@@ -43,9 +45,7 @@ public class MainVIrtualKeyRepositary {
 			switch(choice)
 			{
 			case 1:
-				
-				//1. Check if dirName is not created, then create it
-				//2. get list of files and print
+			
 				l.listFiles(dirName);
 				break;
 			case 2:
@@ -66,7 +66,6 @@ public class MainVIrtualKeyRepositary {
 		}while (flag == true);
 		s.close();
 	}
-
 }
 
 

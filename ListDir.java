@@ -7,6 +7,8 @@ public class ListDir
 {
 	public void listFiles(String dirName)
 	{
+		//1. Check if dirName is not created, then create it
+		//2. get list of files and print
 		checkDirExists(dirName);
 		
 		File dir = new File(dirName);
@@ -28,8 +30,7 @@ public class ListDir
                 }
             }
             System.out.println("############ FILE LIST END ####################\n");
-            }
-      
+            }  
 	}
 	
 	public void checkDirExists(String dirName)
@@ -40,6 +41,5 @@ public class ListDir
 		}
 		return;
 	}
-
 }
 

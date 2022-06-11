@@ -5,9 +5,7 @@ import java.io.File;
 import java.io.IOException;  
 
 public class BussinessOps
-{
-	  
-	
+{	
 	public void createFile(String dirName,String fname)
 	{
 				
@@ -20,23 +18,23 @@ public class BussinessOps
 		else
 		{
 			System.out.println("Creating file "+fname);
-		boolean result;  
-		try   
-		{  
-			result = file.createNewFile();  //creates a new file  
-			if(result)      // test if successfully created a new file  
+			boolean result;  
+			try   
 			{  
-				System.out.println("file created "+file.getCanonicalPath()); //returns the path string  
-			}  
-			else  
+				result = file.createNewFile();  //creates a new file  
+				if(result)      // test if successfully created a new file  
+				{  
+					System.out.println("file created "+file.getCanonicalPath()); //returns the path string  
+				}  
+				else  
+				{  
+					System.out.println("File already exist at location: "+file.getCanonicalPath());  
+				}  
+			}   
+			catch (IOException e)   
 			{  
-				System.out.println("File already exist at location: "+file.getCanonicalPath());  
-			}  
-		}   
-		catch (IOException e)   
-		{  
-		e.printStackTrace();    //prints exception if any  
-		}         
+				e.printStackTrace();    //prints exception if any  
+			}         
 		}  
 	}
 
@@ -60,6 +58,7 @@ public class BussinessOps
         }
 		
 	}
+	
 	public void searchFile(String dirName, String fname) {
 		
 		File file = new File(dirName+"/",fname);
@@ -74,6 +73,7 @@ public class BussinessOps
 		return;
 		
 	}
+	
 	public void businessMenu(String dirName)
 	{
 		Scanner s=new Scanner(System.in);
@@ -106,7 +106,6 @@ public class BussinessOps
 				String fname = s.next();
 				
 				createFile(dirName, fname);
-				
 				break;
 			case 2:
 				System.out.println("Enter file name to delete");
@@ -130,7 +129,5 @@ public class BussinessOps
 
 		}while (flag == true);
 		//s.close();
-		
 	}
-
 }
