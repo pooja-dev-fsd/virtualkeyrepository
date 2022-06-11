@@ -12,12 +12,6 @@ public class ListDir
 		File dir = new File(dirName);
         
 		//TODO: Need to check if directory  is empty or not
-		/*System.out.print("len " +dir.length());
-        if (dir.length()==1)
-        {
-        	System.out.println("Directory"+dirName+"is empty\n");
-        	return;
-        }*/
         
         File[] files = dir.listFiles();
         

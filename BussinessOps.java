@@ -112,7 +112,6 @@ public class BussinessOps
 				System.out.println("Enter file name to delete");
 				String delfname = s.next();
 				deleteFile(dirName, delfname);
-				//continue;
 				break;
 			case 3:
 				System.out.println("Enter file name to search");
